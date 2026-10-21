@@ -6,6 +6,12 @@ from PIL import Image
 from scipy.stats import spearmanr
 
 df = pd.read_csv("results/decisions.csv")
+import sys
+
+split = pd.read_csv("results/split.csv")
+df = df.merge(split, on="path")
+df = df[df.split == (sys.argv[1] if len(sys.argv) > 1 else "dev")]
+
 vis = pd.concat([pd.read_csv(f) for f in Path("results").glob("*_vision.csv")])
 df = df.merge(vis[["path", "tau"]], on="path")
 
