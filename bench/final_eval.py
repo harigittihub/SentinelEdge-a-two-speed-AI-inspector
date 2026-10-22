@@ -57,6 +57,8 @@ for s in SYSTEMS:
     })
 print(pd.DataFrame(rows).to_string(index=False))
 
+pd.DataFrame(rows).to_csv("results/final_eval_test.csv", index=False)
+
 print("\nPaired difference, frozen policy minus Jev alone (95% bootstrap CI):")
 for k in ["acc", "fa_rate", "miss_rate"]:
     point = metrics(df, "jev_claude_policy")[k] - metrics(df, "jev")[k]
