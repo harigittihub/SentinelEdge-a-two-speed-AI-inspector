@@ -2,7 +2,7 @@
 
 An industrial-inspection pipeline that puts **Jev** (TypeSafe's fast "System One" decision model) between a PyTorch vision model and a slower LLM, and tests honestly where each stage helps and where it doesn't.
 
-![Dashboard](docs/dashboard_escalation.png)
+![Dashboard](docs/dashboard_streamlit.png)
 
 ## How it works
 
